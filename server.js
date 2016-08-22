@@ -22,9 +22,9 @@ var User = require('./models').User;
 var app = express();
 
   app.set('view engine', 'html') // will be handlebars or html
-  app.engine('html', exphbs{
+  app.engine('html', exphbs({
     defaultLayout: 'main'
-  });// handlebars or html
+  }));// handlebars or html
 
 passport.use('local', new LocalStrategy(
   function(username, password, done) {
@@ -42,21 +42,21 @@ passport.use('local', new LocalStrategy(
     .catch(function(err){
       throw err;
     })
-  }
+  }));
 });
 
 // also want to give the option to login via Linkedin
-passport.use(new LinkedInStrategy({
-    consumerKey: LINKEDIN_API_KEY,
-    consumerSecret: LINKEDIN_SECRET_KEY,
-    callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback"
-  },
-  function(token, tokenSecret, profile, done) {
-    User.findOrCreate({ linkedinId: profile.id }, function (err, user) {
-      return done(err, user);
-    });
-  }
-));
+//passport.use(new LinkedInStrategy({
+//    consumerKey: LINKEDIN_API_KEY,
+//    consumerSecret: LINKEDIN_SECRET_KEY,
+//    callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback"
+//  },
+//  function(token, tokenSecret, profile, done) {
+//    User.findOrCreate({ linkedinId: profile.id }, function (err, user) {
+//      return done(err, user);
+//    });
+//  }
+//));
 
 passport.serializeUser(function(user, cb){
   console.log("hi there", user.id)
@@ -66,11 +66,11 @@ passport.serializeUser(function(user, cb){
 passpot.deserializeUser(function(id, cb){
   User.findOne( {where: {id: id} }).then(function(user){
     cb(null, user);
-  }).catch(function(err); {
+  }).catch(function(err) {
       if (err) {
           return cb(err);
       }
-    });
+    })
 })
 
 
