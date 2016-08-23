@@ -1,0 +1,17 @@
+.navbar {
+    background-color: white;
+}
+
+#logo{
+    height: 75px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#tname{ 
+    font-family: 'EB Garamond', serif;
+    display:inline-block;
+    margin-bottom: 1px;
+    margin-top:5px;
+    font-size: 50px;
+}
