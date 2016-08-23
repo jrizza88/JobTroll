@@ -104,11 +104,6 @@ var PORT = process.env.PORT || 8000;
      	console.log('database operation on port: ' + PORT);
      });
 
-    // console.log("database operationing on: ", PORT);
-
-
-
-
 
 
 // also want to give the option to login via Linkedin
