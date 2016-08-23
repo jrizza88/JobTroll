@@ -13,6 +13,7 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
 // using local strategy, and setting it up here to give options.
 // may need to customize this //
 var LocalStrategy = require('passport-local').Strategy;
+var importData = require('./config/orm.js')['exportData'];
 
 
 var db = require('./models/index.js').sequelize
@@ -79,6 +80,8 @@ passport.use('local', new LocalStrategy(
      app.use(passport.initialize());
      app.use(passport.session());
 
+     app.use('/static', express.static('public/assets'));
+
      // ------------------------------------
      // ROUTES
      // ------------------------------------
@@ -96,6 +99,12 @@ passport.use('local', new LocalStrategy(
      })
 
      app.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login'}));
+
+      app.get('/research', function(req,res){
+        importData.selectAll(function(success){
+        res.render('research',{data: success})
+        })
+      });
 
      //app.listen(8000)
 var PORT = process.env.PORT || 8000;

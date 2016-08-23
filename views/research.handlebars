@@ -1,0 +1,128 @@
+<div class = "text-center row">
+	<div class = "col-md-3">
+	</div>
+	<div class = "col-md-2">
+		<img id="pic1" src="/static/images/jobtroll.jpg" alt="jobtroll" height="125" width="125">
+	</div>
+	<div class = "col-md-2">
+		<h1 id="header">JobTroll</h1>
+	</div>
+	<div class = "col-md-2">
+	</div>
+	</div class="col-md-3">
+	</div>
+</div>
+<div class = "text-center top">
+</div>
+<div class = "row links">
+	<div class = "col-md-8"></div>
+	<div class = "col-md-4 navbar-collapse collapse" id="site-nav">
+		<ul class="nav navbar-nav navbar-right">
+			<li>
+				<a href="#jobs" class="scrollto">Job Research</a>
+			</li>
+			<li>
+				<a href="#resume" class="scrollto">Resume Help</a>
+			</li>
+			<li>
+				<a href="#coverletter" class="scrollto">Cover Letter Help</a>
+			</li>
+			<li>
+				<a href="#interviews" class="scrollto">Interview Help</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class = "text-center bodytext">
+	<h2>Resources</h2>
+</div>
+<div class = "row">
+	<div class = "col-xs-6 col-sm-4"></div>
+	<div class = "well well-sm center-block text-center explanation col-xs-6 col-sm-4">
+		<h4>Forget Google. We have spent time doing the research for you. On this page you will find the best tech companies to work for, the interview questions to practice, and the correct way to format your resume and cover letter.</h4>
+	</div>
+	<div class = "col-xs-6 col-sm-4"></div>
+</div>
+<div class = "interviewSection left-block row">
+	<div class = "col-md-4">
+		<section class = "scroll-down" id="interviews">
+			<button id="randomQuestion">Generate a Random Question</button>
+		</section>
+		<h5>As we all know with computer programming, there are many answers to a question. Once you are done answering, please research many differernt answering using the resources that are out there.</h5>
+	</div>
+	<div class = "col-md-8"></div>
+</div>
+<div class="text-center">
+	<h1>In this section, you can find various tech recruiters to contact that will help find you a job, job posting websites where you can search through many job postings, and a few of the top tech companies to work for that you should probably apply to through a website or phone call.
+	</h1>
+</div>
+<div class="row">
+	<div class="col-md-5">
+		<h3>Tech Recruiter Companies</h3>
+		<table class="recruiterTable">
+			<thead>
+				<tr>
+					<th>Company</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#each data.recruiters}}
+				<tr>
+					<td>{{this.company}}</td>
+					<td>{{this.description}}</td>
+				</tr>
+			{{/each}}
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-7">
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-5">
+		<h3>Tech Job Posting Websites</h3>
+		<table class="recruiterTable">
+			<thead>
+				<tr>
+					<th>Website</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#each data.jobsites}}
+				<tr>
+					<td><a src="{{this.website}}">{{this.website}}</a></td>
+					<td>{{this.description}}</td>
+				</tr>
+			{{/each}}
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-7">
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-5">
+		<h3>Tech Job Posting Websites</h3>
+		<table class="recruiterTable">
+			<thead>
+				<tr>
+					<th>Company</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#each data.companies}}
+				<tr>
+					<td>{{this.company}}</td>
+					<td>{{this.description}}</td>
+				</tr>
+			{{/each}}
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-7">
+	</div>
+</div>
+
