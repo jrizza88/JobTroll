@@ -69,7 +69,7 @@ passport.use('local', new LocalStrategy(
      app.use(bodyParser.json())
      app.use(cookieParser())
      app.use(session({
-       secret: 'keyboard cat',
+       secret: 'jobtroll is the ticket to success',
        store: new SequelizeStore({
          db: db
        }),
