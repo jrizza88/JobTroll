@@ -17,7 +17,9 @@
 <div class = "row links">
 	<div class = "col-md-8"></div>
 	<div class = "col-md-4 navbar-collapse collapse" id="site-nav">
-		<ul class="nav navbar-nav navbar-right">
+		<ul class="nav navbar-nav navbar-right">	<li>
+				<a href="#interviews" class="scrollto">Interview Help</a>
+			</li>
 			<li>
 				<a href="#jobs" class="scrollto">Job Research</a>
 			</li>
@@ -26,9 +28,6 @@
 			</li>
 			<li>
 				<a href="#coverletter" class="scrollto">Cover Letter Help</a>
-			</li>
-			<li>
-				<a href="#interviews" class="scrollto">Interview Help</a>
 			</li>
 		</ul>
 	</div>
@@ -43,18 +42,58 @@
 	</div>
 	<div class = "col-xs-6 col-sm-4"></div>
 </div>
-<div class = "interviewSection left-block row">
+<div class = "interviewSection center-block" id="interviews">
+	<div class = "jumbotron text-center">
+		<h1 id = "sectionTitle">Tech Interview Research</h1>
+		<h3>In this section, you can research ways to prepare for an interview, as well as use the interview question generator which has over 150 different questions stored.
+		</h3>
+	</div>
+</div>
+<div class = "row">
 	<div class = "col-md-4">
-		<section class = "scroll-down" id="interviews">
-			<button id="randomQuestion">Generate a Random Question</button>
-		</section>
-		<h5>As we all know with computer programming, there are many answers to a question. Once you are done answering, please research many differernt answering using the resources that are out there.</h5>
+		<h2 id="title">Interview Tips</h2>
+		<ul>
+			<li>Be very strong in the basics of the programming language</li>
+			<li>Be ready to say "NO" and "I Dont Know"</li>
+			<li>Be concise on the answer...Do not add extra words to explain the basic answer</li>
+			<li>Do not give irrelevant answers or ask questions that dont make sense</li>
+			<li>It is okay to take your time to answer</li>
+			{{!-- https://www.linkedin.com/pulse/20140709101232-15993456-five-tips-to-crack-any-technical-interview --}}
+			<li>Be weary of appearance. Iron your clothes. Don't dress too fancy, but dont dress too casual</li>
+			<li>Just as in your resume, dont overemphasize skills</li>
+			<li>Don't be one of those arrogant techies</li>
+			<li>Communicate well...Think of every question as an opening to a conversation</li>
+			<li>PREPARE</li>
+			<li>Show your interest...Do research on the company beforehand</li>
+			<li>Don't be TOO eager for perks</li>
+			<li>Closure is important...Have a strong closing statement</li>
+			{{!-- http://www.monster.com/career-advice/article/ten-tech-it-interview-errors --}}
+		</ul>
 	</div>
 	<div class = "col-md-8"></div>
 </div>
-<div class="text-center">
-	<h1>In this section, you can find various tech recruiters to contact that will help find you a job, job posting websites where you can search through many job postings, and a few of the top tech companies to work for that you should probably apply to through a website or phone call.
-	</h1>
+<div class = "row center-block">
+	<div class = "col-md-4">
+	</div>
+	<div class = "col-md-4  well well-sm text-center">
+		<section>
+			<button id="randomQuestion">Generate a Random Question</button>
+			<br>
+			<div id = "questionDiv">
+			</div>
+		</section>
+		<br>
+		<h5>As we all know with computer programming, there are many answers to a question. Once you are done answering, please research many the differernt answers using the resources that are out there.</h5>
+	</div>
+	<div class="col-md-4">
+	</div>
+</div>
+<div class="text-center" id = "jobs">
+	<div class = "jumbotron">
+		<h1 id = "sectionTitle">Tech Job Research</h1>
+		<h3>In this section, you can find various tech recruiters to contact that will help find you a job, job posting websites where you can search through many job postings, and a few of the top tech companies to work for that you should probably apply to through a website or phone call.
+		</h3>
+	</div>
 </div>
 <div class="row">
 	<div class="col-md-5">
@@ -104,7 +143,7 @@
 </div>
 <div class="row">
 	<div class="col-md-5">
-		<h3>Tech Job Posting Websites</h3>
+		<h3>Top Tech Companies to Work For</h3>
 		<table class="recruiterTable">
 			<thead>
 				<tr>

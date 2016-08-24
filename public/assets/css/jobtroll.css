@@ -40,3 +40,10 @@
 table, th, td {
    border: 1px solid black;
 }
+
+#sectionTitle{
+    text-decoration: underline;
+}
+#title{
+    text-decoration: underline;
+}
