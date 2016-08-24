@@ -47,3 +47,66 @@ table, th, td {
 #title{
     text-decoration: underline;
 }
+
+
+
+
+/*Ethans css */
+.navbar-header{
+    padding-left:10px;
+    
+}
+.logo{
+    display:inline-block;
+    
+}
+
+.navbar {
+    background-color: white;
+}
+
+#logo{
+    height: 65px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#tname{ 
+    font-family: 'EB Garamond', serif;
+    display:inline-block;
+    margin-bottom: 1px;
+    margin-top:0px;
+    font-size: 55px;
+    margin-left: 10px;
+}
+
+#logoName {
+    background-color: lightgrey;
+    padding-right:20px;
+    
+}
+
+#navList{
+    margin-top: 15px;
+    margin-right:10%;
+    padding-bottom:0px;
+}
+
+#navList a {
+    background-color: lightgray;
+    color:black;
+    margin-right: 15px;
+    font-size: 20px;
+    -webkit-transition: color .2s ease-out, padding .3s ease-out;
+    transition: color .2s ease-out, padding .3s ease-out; 
+}
+
+
+
+
+
+
+
+
+
+/*///////////*/
