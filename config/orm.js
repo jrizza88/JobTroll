@@ -1,8 +1,6 @@
 var Database = require('../models');
 Database.sequelize.sync();
 
-console.log(Database);
-
 var Recruiters = require('../models').Recruiters;
 var Companies = require('../models').Companies;
 var JobWebsites = require('../models').JobWebsites;
