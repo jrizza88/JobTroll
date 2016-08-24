@@ -212,7 +212,7 @@ $(document).ready(function(){
 		$('#currentQuestion').remove();
 		randomQuestion = interviewQuestions[Math.floor(Math.random() * interviewQuestions.length)];
 		var nextQuestion = createQuestion(randomQuestion);
-		$('#interviews').append(nextQuestion);
+		$('#questionDiv').append(nextQuestion);
 	};
 
 	$('#randomQuestion').on('click', function(){
