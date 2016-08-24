@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "orange88",
-    "database": "jobtroll_db",
+    "password": "Ntho1mas",
+    "database": "CompanyResearch_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
