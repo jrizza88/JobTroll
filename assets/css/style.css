@@ -42,4 +42,14 @@
     background-color: lightgray;
     color:black;
     margin-right: 15px;
+    font-size: 20px;
+}
+
+#userInfo{
+    background-color: lightgray;
+    padding:20px
+}
+
+#userImage img {
+    height: 75px;
 }
