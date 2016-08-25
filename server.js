@@ -1,4 +1,3 @@
-
 var express = require('express');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
@@ -117,8 +116,8 @@ var PORT = process.env.PORT || 8000;
 
 // also want to give the option to login via Linkedin
 //passport.use(new LinkedInStrategy({
-//    consumerKey: LINKEDIN_API_KEY,
-//    consumerSecret: LINKEDIN_SECRET_KEY,
+//    consumerKey: 77d7l76s8dsyh4,
+//    consumerSecret: CkQizFeB4onJWAAH,
 //    callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback"
 //  },
 //  function(token, tokenSecret, profile, done) {
