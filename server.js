@@ -104,13 +104,14 @@ passport.use('local', new LocalStrategy(
         importData.selectAll(function(success){
           console.log(success);
         res.render('research',{data: success})
+
         })
       });
 
-     //app.listen(8000)
+    //app.listen(8000)
 var PORT = process.env.PORT || 8000;
 
-     app.listen(PORT, function () {
+    app.listen(PORT, function () {
      	console.log('database operation on port: ' + PORT);
      });
 
