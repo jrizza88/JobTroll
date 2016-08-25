@@ -15,13 +15,14 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
 var LocalStrategy = require('passport-local').Strategy;
 var importData = require('./config/orm.js')['exportData'];
 
-
-var db = require('./models/index.js').sequelize
+var db = require('./models/index.js').sequelize;
 // this is used to sync the data
 db.sync();
+
 var User = require('./models').User;
 var app = express();
 
+var companies = require('./models').Companies;
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -102,6 +103,7 @@ passport.use('local', new LocalStrategy(
 
       app.get('/research', function(req,res){
         importData.selectAll(function(success){
+          console.log(success);
         res.render('research',{data: success})
         })
       });
