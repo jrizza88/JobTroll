@@ -119,71 +119,112 @@
 </div>
 <div class="row">
 	<div class="col-md-5">
-		<h3>Tech Recruiter Companies</h3>
-		<table class="recruiterTable">
-			<thead>
-				<tr>
-					<th>Company</th>
-					<th>Description</th>
-				</tr>
-			</thead>
-			<tbody>
-			{{#each data.recruiters}}
-				<tr>
-					<td>{{this.company}}</td>
-					<td>{{this.description}}</td>
-				</tr>
-			{{/each}}
-			</tbody>
-		</table>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title text-center">Tech Recruiter Companies</h3>
+			</div>
+			<div class="panel-body">
+				<table class="recruiterTable">
+					<thead>
+						<tr>
+							<th>Company</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					{{#each data.recruiters}}
+						<tr>
+							<td>{{this.company}}</td>
+							<td>{{this.description}}</td>
+						</tr>
+					{{/each}}
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
 	<div class="col-md-7">
 	</div>
 </div>
 <div class="row">
 	<div class="col-md-5">
-		<h3>Tech Job Posting Websites</h3>
-		<table class="recruiterTable">
-			<thead>
-				<tr>
-					<th>Website</th>
-					<th>Description</th>
-				</tr>
-			</thead>
-			<tbody>
-			{{#each data.jobsites}}
-				<tr>
-					<td><a src="{{this.website}}">{{this.website}}</a></td>
-					<td>{{this.description}}</td>
-				</tr>
-			{{/each}}
-			</tbody>
-		</table>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title text-center">Tech Job Posting Websites</h3>
+			</div>
+			<div class = "panel-body">
+				<table class="recruiterTable">
+					<thead>
+						<tr>
+							<th>Website</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					{{#each data.jobsites}}
+						<tr>
+							<td><a src="{{this.website}}">{{this.website}}</a></td>
+							<td>{{this.description}}</td>
+						</tr>
+					{{/each}}
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
 	<div class="col-md-7">
 	</div>
 </div>
 <div class="row">
 	<div class="col-md-5">
-		<h3>Top Tech Companies to Work For</h3>
-		<table class="recruiterTable">
-			<thead>
-				<tr>
-					<th>Company</th>
-					<th>Description</th>
-				</tr>
-			</thead>
-			<tbody>
-			{{#each data.companies}}
-				<tr>
-					<td>{{this.company}}</td>
-					<td>{{this.description}}</td>
-				</tr>
-			{{/each}}
-			</tbody>
-		</table>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class = "panel-title text-center">Top Tech Companies to Work For</h3>
+			</div>
+			<div class = "panel-body">
+				<table class="recruiterTable">
+					<thead>
+						<tr>
+							<th>Company</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					{{#each data.companies}}
+						<tr>
+							<td>{{this.company}}</td>
+							<td>{{this.description}}</td>
+						</tr>
+					{{/each}}
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
 	<div class="col-md-7">
 	</div>
 </div>
+<br>
+<div class="text-center" id = "coverletter">
+	<div class = "jumbotron">
+		<h1 id = "sectionTitle">Cover Letter Help</h1>
+		<h3>In this section, you can find various tips on cover letter writing. Remember, just like your resume, please create a new cover letter for each company that you apply to
+		</h3>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-5">
+		<div class = "panel panel-default">
+			<div class = "panel-heading">
+				<h3 class = "panel-title text-center">Sample Cover Letter</h3>
+			</div>
+			<div class = "panel-body">
+				<img id="pic1" src="/static/images/jdcl.jpg" alt="jobtroll" height="500" width="500">
+			</div>
+		</div>
+	</div>
+	<div class="col-md-7">
+	</div>
+</div>
+
 
