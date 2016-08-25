@@ -28,7 +28,7 @@ app.set('view engine', 'handlebars');
 
 passport.use('local', new LocalStrategy(
   function(username, password, done) {
-    console.log("i work!")
+    console.log("I work!")
     User.findOne({where: {username: username} } ).then(function(user){
       if (!user){
         return done(null, false);
