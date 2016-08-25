@@ -1,9 +1,18 @@
+.navbar-header{
+    padding-left:10px;
+    
+}
+.logo{
+    display:inline-block;
+    
+}
+
 .navbar {
     background-color: white;
 }
 
 #logo{
-    height: 75px;
+    height: 65px;
     padding-top: 5px;
     padding-bottom: 5px;
 }
@@ -12,6 +21,36 @@
     font-family: 'EB Garamond', serif;
     display:inline-block;
     margin-bottom: 1px;
-    margin-top:5px;
-    font-size: 50px;
+    margin-top:0px;
+    font-size: 55px;
+    margin-left: 10px;
+}
+
+#logoName {
+    background-color: lightgrey;
+    padding-right:20px;
+    
+}
+
+#navList{
+    margin-top: 15px;
+    margin-right:10%;
+    padding-bottom:0px;
+}
+
+#navList a {
+    background-color: lightgray;
+    color:black;
+    margin-right: 15px;
+    font-size: 20px;
+    
+}
+
+#userInfo{
+    background-color: lightgray;
+    padding:20px
+}
+
+#userImage img {
+    height: 75px;
 }
