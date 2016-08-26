@@ -1,4 +1,3 @@
-
 var express = require('express');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
@@ -15,20 +14,21 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
 var LocalStrategy = require('passport-local').Strategy;
 var importData = require('./config/orm.js')['exportData'];
 
-
-var db = require('./models/index.js').sequelize
+var db = require('./models/index.js').sequelize;
 // this is used to sync the data
 db.sync();
+
 var User = require('./models').User;
 var app = express();
 
+var companies = require('./models').Companies;
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 passport.use('local', new LocalStrategy(
   function(username, password, done) {
-    console.log("i work!")
+    console.log("I work!")
     User.findOne({where: {username: username} } ).then(function(user){
       if (!user){
         return done(null, false);
@@ -102,14 +102,16 @@ passport.use('local', new LocalStrategy(
 
       app.get('/research', function(req,res){
         importData.selectAll(function(success){
+          console.log(success);
         res.render('research',{data: success})
+
         })
       });
 
-     //app.listen(8000)
+    //app.listen(8000)
 var PORT = process.env.PORT || 8000;
 
-     app.listen(PORT, function () {
+    app.listen(PORT, function () {
      	console.log('database operation on port: ' + PORT);
      });
 
@@ -117,8 +119,8 @@ var PORT = process.env.PORT || 8000;
 
 // also want to give the option to login via Linkedin
 //passport.use(new LinkedInStrategy({
-//    consumerKey: LINKEDIN_API_KEY,
-//    consumerSecret: LINKEDIN_SECRET_KEY,
+//    consumerKey: 77d7l76s8dsyh4,
+//    consumerSecret: CkQizFeB4onJWAAH,
 //    callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback"
 //  },
 //  function(token, tokenSecret, profile, done) {

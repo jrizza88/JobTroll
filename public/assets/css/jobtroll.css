@@ -40,3 +40,75 @@
 table, th, td {
    border: 1px solid black;
 }
+
+
+
+
+/*Ethans css */
+.navbar-header{
+    padding-left:10px;
+    
+}
+.logo{
+    display:inline-block;
+    
+}
+
+.navbar {
+    background-color: white;
+}
+
+#logo{
+    height: 65px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#tname{ 
+    font-family: 'EB Garamond', serif;
+    display:inline-block;
+    margin-bottom: 1px;
+    margin-top:0px;
+    font-size: 59px;
+    margin-left: 10px;
+}
+
+#logoName {
+    background-color: lightgrey;
+    padding-right:20px;
+    
+}
+
+#navList{
+    margin-top: 15px;
+    margin-right:5%;
+    padding-bottom:0px;
+    
+}
+
+#navList a {
+    background-color: lightgray;
+    color:black;
+    margin-right: 15px;
+    font-size: 17px;
+    font-family: 'EB Garamond', serif;
+    -webkit-transition: color .2s ease-out, padding .3s ease-out;
+    transition: color .2s ease-out, padding .3s ease-out; 
+}
+#navList a:hover{
+    padding-top: 4px;
+    padding-bottom:10px;
+    color:#00CCCB !important;
+    background: none;
+    font-family: 'EB Garamond', serif;
+    
+}
+
+
+
+
+
+
+
+
+/*///////////*/
