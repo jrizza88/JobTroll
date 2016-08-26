@@ -104,8 +104,17 @@ table, th, td {
     
 }
 
+.headText {
+    font-family: 'EB Garamond', serif;
+}
 
+#title {
+    text-align: center;
+}
 
+.tips li {
+    margin-bottom:10px;
+}
 
 
 
