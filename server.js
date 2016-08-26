@@ -4,13 +4,12 @@ var cookieParser = require('cookie-parser');
 //var myConnection = require('./config/connection');
 var exphbs = require('express-handlebars');
 var bcrypt = require('bcrypt-nodejs');
-//var orm = require('./config/orm');
 var passport = require('passport');
 var session = require('express-session');
 // have to pass on a Store object on to the session
 var SequelizeStore = require('connect-session-sequelize')(session.Store);
 // using local strategy, and setting it up here to give options.
-// may need to customize this //
+
 var LocalStrategy = require('passport-local').Strategy;
 var importData = require('./config/orm.js')['exportData'];
 
@@ -26,7 +25,7 @@ var companies = require('./models').Companies;
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-passport.use('local', new LocalStrategy(
+module.exports = passport.use('local', new LocalStrategy(
   function(username, password, done) {
     console.log("I work!")
     User.findOne({where: {username: username} } ).then(function(user){
@@ -97,6 +96,82 @@ passport.use('local', new LocalStrategy(
      app.get('/login', function(req, res) {
        res.render('login');
      })
+
+     app.get('/register', function(req, res) {
+     	res.render('register'); // uses register.handlebars
+     });
+
+     //Register user
+     app.post('/register',function(req,res){
+       var fname=req.body.fname;
+       var lname=req.body.lname;
+       var email=req.body.email;
+       var username=req.body.username;
+       var password=req.body.password;
+       var password2=req.body.password2;
+
+       //validation
+       req.checkBody('fname','First Name is required').notEmpty();
+       req.checkBody('lname','Last Name is required').notEmpty();
+       req.checkBody('username','Username is required').notEmpty();
+       req.checkBody('email','Email is required').notEmpty();
+       req.checkBody('email','Email is not valid').isEmail();
+       req.checkBody('password','Password is required').notEmpty();
+       req.checkBody('password', 'Password should be 7 to 20 characters').len(7, 20);
+       req.checkBody('password2','PasswordS do not match').equals(req.body.password);
+
+       var errors=req.validationErrors();
+
+
+     var createUser = function(newUser, callback){
+       bcrypt.genSalt(10,function(err, salt){
+         bcrypt.hash(newUser.password, salt, function(err, hash){
+           newUser.password = hash;
+           newUser.save(callback);
+         });
+       });
+     }
+     var getUserByUsername = function(username, callback){
+       var query = {username: username};
+       User.findOne(query, callback);
+     }
+     var getUserById = function(id, callback){
+       User.findById(id, callback);
+     }
+     var comparePassword = function(password, passwd, done, user){
+       bcrypt.compare(password, passwd, function(err, isMatch){
+         if(err) throw err;
+         if(isMatch){
+           return done(null, user)
+         } else {
+           return done(null, false)
+         }
+       });
+     }
+
+     if (errors){
+       console.log('You have errors');
+     res.render('register',{
+       errors:errors
+     });
+     }
+     else {
+       console.log('You have no register errors');
+       var newUser = new User({
+         fname: fname,
+         lname: lname,
+         username: username,
+         email: email,
+         password:password
+       });
+       User.createUser(newUser,function(err, user){
+         if (err) throw err;
+         console.log(user);
+       });
+       console.log('success_msg', 'you are registered and now can login');
+     res.redirect('/users/login');
+     }
+     });
 
      app.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login'}));
 
