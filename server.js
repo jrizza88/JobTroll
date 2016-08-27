@@ -89,17 +89,19 @@ app.set('view engine', 'handlebars');
      // ------------------------------------
 
 //  ----- Log In  GET Request-------- //
-     app.get('/', function(req, res) {
-       if (req.user) {
-         res.render('home', { name: req.user.username});
-       } else {
-         res.redirect('/login');
-       }
-     })
+     app.get('/', function (req, res) {
+        res.render('home', {user: req.user});
+      });
 
      app.get('/login', function(req, res) {
        res.render('login');
-     })
+     });
+
+     app.get('/home', function (req, res){
+      res.render('home', {user: req.user.id});
+      console.log(user);
+      console.log('I am home');
+     });
 
 // ----- Registration GET Request ------ //
      app.get('/register', function(req, res) {
@@ -111,11 +113,11 @@ app.set('view engine', 'handlebars');
      app.post('/register',function(req,res){
           models.User.create({
             UserName: req.body.userName,
-            Password: req.body.password.len(7, 20),
+            Password: req.body.password,
             Email: req.body.email,
             FirstName: req.body.firstName,
-            LastName: req.body.lastName,
-            Image: req.body.image
+            LastName: req.body.lastName
+       //     Image: req.body.image
           }).then(function() {
             res.redirect('/');
           }).catch(function(err){
@@ -123,62 +125,13 @@ app.set('view engine', 'handlebars');
           });
      });
 
+     // Will we need a profile ??
+     // app.get('/profile', function(req, res){
+        // if
+    // })
 
-//       var errors=req.validationErrors();//
-//
+     app.post('/login', passport.authenticate('local', { successRedirect: '/home', failureRedirect: '/'}));
 
-//     var createUser = function(newUser, callback){
-//       bcrypt.genSalt(10,function(err, salt){
-//         bcrypt.hash(newUser.password, salt, function(err, hash){
-//           newUser.password = hash;
-//           newUser.save(callback);
-//         });
-//       });
-//     }
-//     var getUserByUsername = function(username, callback){
-//       var query = {username: username};
-//       User.findOne(query, callback);
-//     }
-//     var getUserById = function(id, callback){
-//       User.findById(id, callback);
-//     }
-//     var comparePassword = function(password, passwd, done, user){
-//       bcrypt.compare(password, passwd, function(err, isMatch){
-//         if(err) throw err;
-//         if(isMatch){
-//           return done(null, user)
-//         } else {
-//           return done(null, false)
-//         }
-//       });
-//     }//
-
-//     if (errors){
-//       console.log('You have errors');
-//     res.render('register',{
-//       errors:errors
-//     });
-//     }
-//     else {
-//       console.log('You have no register errors');
-//       var newUser = new User({
-//         fname: fname,
-//         lname: lname,
-//         username: username,
-//         email: email,
-//         password:password
-//       });
-//       User.createUser(newUser,function(err, user){
-//         if (err) throw err;
-//         console.log(user);
-//       });
-//       console.log('success_msg', 'you are registered and now can login');
-//     res.redirect('/users/login');
-//     }
-//     });
-
-     app.post('/login', passport.authenticate('local', { successRedirect: '/home', failureRedirect: '/login'}));
-     
      app.get('/logout', function(req, res){
       console.log("you logged out successfully!");
       req.logout();
