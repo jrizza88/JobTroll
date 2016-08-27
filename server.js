@@ -29,9 +29,6 @@ var app = express();
 
 var companies = models.Companies;
 
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
-
  // module.exports =
  passport.use('local', new LocalStrategy(
   function(username, password, done) {
@@ -87,7 +84,13 @@ app.set('view engine', 'handlebars');
      app.use(passport.initialize());
      app.use(passport.session());
 
+  //   /set up static files
      app.use('/static', express.static('public/assets'));
+
+     app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+     app.set('view engine', 'handlebars');
+
+//app.use('/static', express.static(path.join(__dirname, 'public')));
 
      // ------------------------------------
      // ROUTES
@@ -103,11 +106,34 @@ app.set('view engine', 'handlebars');
        res.render('login');
      });
 
-     app.get('/home', function (req, res){
-      res.render('home', {user: req.user.id});
-      console.log(user);
-      console.log('I am home');
-     });
+//     app.post('/login',
+//        passport.authenticate('local'),
+//        function(req, res) {
+//          console.log('*****************************************************')
+//          console.log(req.user.username)
+//          // If this function gets called, authentication was successful.
+//          // `req.user` contains the authenticated user.
+//          res.redirect('/home');
+//  });
+
+  app.post('/login', passport.authenticate('local', {
+	successRedirect: '/home',
+	failureRedirect: '/login'
+}));
+
+  app.get('/home', function (req, res){
+      if (req.user) {
+          var user = req.user.username;
+          console.log(req.user.username);
+          res.render('home', {user: req.user.username});
+          console.log(user);
+          console.log('I am home');
+    } else {
+          console.log('what happened?');
+      		res.redirect('/login');
+    }
+  });
+
 
 // ----- Registration GET Request ------ //
      app.get('/register', function(req, res) {
@@ -139,15 +165,7 @@ app.set('view engine', 'handlebars');
 //     app.post('/login', passport.authenticate('local',
 //    { successRedirect: '/home', failureRedirect: '/'}));
 
-     app.post('/login',
-  passport.authenticate('local'),
-  function(req, res) {
-    console.log('*****************************************************')
-    console.log(req.user.username)
-    // If this function gets called, authentication was successful.
-    // `req.user` contains the authenticated user.
-    res.redirect('/home');
-  });
+
 
      app.get('/logout', function(req, res){
       //var name = req.user.username;
