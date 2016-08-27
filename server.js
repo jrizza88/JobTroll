@@ -13,16 +13,21 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
 var LocalStrategy = require('passport-local').Strategy;
 var importData = require('./config/orm.js')['exportData'];
 
-var db = require('./models/index.js').sequelize;
+// var db = require('./models/index.js').sequelize;
 var models = require('./models');
+var db = models.sequelize;
 
 // this is used to sync the data
 db.sync();
 
-var User = require('./models').User;
+
+var User = models.User;
+User.findAll().then(function(u){
+  console.log(u);
+})
 var app = express();
 
-var companies = require('./models').Companies;
+var companies = models.Companies;
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -90,6 +95,7 @@ app.set('view engine', 'handlebars');
 
 //  ----- Log In  GET Request-------- //
      app.get('/', function (req, res) {
+       console.log(req.user, "request Userrrrrrr")
         res.render('home', {user: req.user});
       });
 
@@ -112,11 +118,11 @@ app.set('view engine', 'handlebars');
      //Register user
      app.post('/register',function(req,res){
           models.User.create({
-            UserName: req.body.userName,
-            Password: req.body.password,
-            Email: req.body.email,
-            FirstName: req.body.firstName,
-            LastName: req.body.lastName
+            username: req.body.username,
+            password: req.body.password,
+            email: req.body.email,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName
        //     Image: req.body.image
           }).then(function() {
             res.redirect('/');
@@ -130,11 +136,24 @@ app.set('view engine', 'handlebars');
         // if
     // })
 
-     app.post('/login', passport.authenticate('local', { successRedirect: '/home', failureRedirect: '/'}));
+//     app.post('/login', passport.authenticate('local',
+//    { successRedirect: '/home', failureRedirect: '/'}));
+
+     app.post('/login',
+  passport.authenticate('local'),
+  function(req, res) {
+    console.log('*****************************************************')
+    console.log(req.user.username)
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+    res.redirect('/home');
+  });
 
      app.get('/logout', function(req, res){
+      //var name = req.user.username;
       console.log("you logged out successfully!");
       req.logout();
+      //console.log(name + "works");
       res.redirect('/');
      });
 
