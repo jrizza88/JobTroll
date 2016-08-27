@@ -116,8 +116,42 @@ table, th, td {
     margin-bottom:10px;
 }
 
+#pageNav {
+    background-color: none;
+    padding:10px;
+    margin-right: 33%;
+    font-size: 15px;
+}
 
+#pageNav a:hover{
+    padding-top: 4px;
+    padding-bottom:10px;
+    color:#00CCCB !important;
+    background: none;
+    font-family: 'EB Garamond', serif;
+}
 
+.recruiterTable td{
+    padding:5px;
+}
+
+.recruiterTable th{
+    text-align: center;
+}
+
+#pic1{
+    margin-left:20px;
+}
+
+#pic2 {
+    margin-left: 90px;
+}
+
+footer {
+    padding:20px;
+    background-color:lightgray;
+    border-top:thick double black;
+}
 
 
 /*///////////*/
