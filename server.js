@@ -172,7 +172,7 @@ var companies = models.Companies;
       console.log("you logged out successfully!");
       req.logout();
       //console.log(name + "works");
-      res.redirect('/');
+      res.redirect('/login');
      });
 
 
