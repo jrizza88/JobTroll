@@ -99,7 +99,7 @@ var companies = models.Companies;
 //  ----- Log In  GET Request-------- //
      app.get('/', function (req, res) {
        console.log(req.user, "request Userrrrrrr")
-        res.render('home', {user: req.user});
+        res.render('login', {user: req.user});
       });
 
      app.get('/login', function(req, res) {
@@ -172,7 +172,7 @@ var companies = models.Companies;
       console.log("you logged out successfully!");
       req.logout();
       //console.log(name + "works");
-      res.redirect('/login');
+      res.redirect('/');
      });
 
 
