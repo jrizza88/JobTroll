@@ -116,9 +116,11 @@ var companies = models.Companies;
 //  });
 
   app.post('/login', passport.authenticate('local', {
-	successRedirect: '/home',
-	failureRedirect: '/login'
-}));
+	failureRedirect: '/login' }), function(req,res){
+    req.session.save(function(){
+        res.redirect('/home')
+    })
+  });
 
   app.get('/home', function (req, res){
       if (req.user) {
