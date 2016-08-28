@@ -90,8 +90,6 @@ var companies = models.Companies;
      app.engine('handlebars', exphbs({defaultLayout: 'main'}));
      app.set('view engine', 'handlebars');
 
-//app.use('/static', express.static(path.join(__dirname, 'public')));
-
      // ------------------------------------
      // ROUTES
      // ------------------------------------
@@ -156,15 +154,6 @@ var companies = models.Companies;
             throw err;
           });
      });
-
-     // Will we need a profile ??
-     // app.get('/profile', function(req, res){
-        // if
-    // })
-
-//     app.post('/login', passport.authenticate('local',
-//    { successRedirect: '/home', failureRedirect: '/'}));
-
 
 
      app.get('/logout', function(req, res){
