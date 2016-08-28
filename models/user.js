@@ -12,7 +12,6 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         User.hasMany(models.application);
         }
-
     }
   });
   return User;

@@ -18,7 +18,7 @@ var models = require('./models');
 var db = models.sequelize;
 
 // this is used to sync the data
-db.sync({force: true});
+db.sync();
 
 
 var User = models.User;
@@ -127,12 +127,8 @@ var companies = models.Companies;
   app.get('/home', function (req, res){
       if (req.user) {
           var user = req.user.username;
-          console.log(req.user.username);
-          res.render('home', {user: req.user.username});
-          console.log(user);
-          console.log('I am home');
+          res.render('home', {user: user});
     } else {
-          console.log('what happened?');
       		res.redirect('/login');
     }
   });
@@ -195,7 +191,7 @@ var companies = models.Companies;
 //  }
 //));
 app.post('/create', function(req, res){
-  models.User.findOne({where: {id: this.id}}).then(function(){
+  User.findOne({where: {id: req.user.id}}).then(function(){
     Application.create({
         companyName: req.body.companyName,
         position:req.body.position,
@@ -204,13 +200,15 @@ app.post('/create', function(req, res){
         nextEvent:req.body.nextEvent,
         notes:req.body.notes,
         resume:req.body.resume
-  }).then(function(){
+  }).then(function(application){
+    req.user.addApplication(application).then(function(){
     res.redirect('/home');
   }).catch(function(err){
     throw err;
   });
 })
 })
+});
 
 var PORT = process.env.PORT || 8000;
 
