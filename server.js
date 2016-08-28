@@ -140,7 +140,19 @@ var companies = models.Companies;
     }
   });
 
-
+app.get('/dummmy', function(req, res){
+  if (req.user) 
+  {
+          Application.findAll({where: {UserId: req.user.id} }).then(function(success){
+            enteredApplication = success;
+          })
+          data = {
+            user: req.user,
+            enteredApp: enteredApplication
+          }
+  }
+  res.redirect('/home');
+});
 // ----- Registration GET Request ------ //
      app.get('/register', function(req, res) {
      	res.render('register'); // uses register.handlebars
@@ -207,7 +219,7 @@ app.post('/create', function(req, res){
         resume:req.body.resume
   }).then(function(application){
     req.user.addApplication(application).then(function(){
-    res.redirect('/home');
+    res.redirect('/dummy');
   }).catch(function(err){
     throw err;
   });
