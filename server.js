@@ -18,7 +18,7 @@ var models = require('./models');
 var db = models.sequelize;
 
 // this is used to sync the data
-db.sync();
+db.sync({force: true});
 
 
 var User = models.User;
@@ -179,11 +179,6 @@ var companies = models.Companies;
       });
 
     //app.listen(8000)
-var PORT = process.env.PORT || 8000;
-
-    app.listen(PORT, function () {
-     	console.log('database operation on port: ' + PORT);
-     });
 
 
 
@@ -216,6 +211,12 @@ app.post('/create', function(req, res){
   });
 })
 })
+
+var PORT = process.env.PORT || 8000;
+
+    app.listen(PORT, function () {
+      console.log('database operation on port: ' + PORT);
+     });
 
 	// models.Manager.findOne({where: { fullName: name} })
 	// // pass the manager in a callback function
