@@ -22,6 +22,7 @@ db.sync();
 
 
 var User = models.User;
+var Application = models.application;
 User.findAll().then(function(u){
   console.log(u);
 })
@@ -194,3 +195,34 @@ var PORT = process.env.PORT || 8000;
 //    });
 //  }
 //));
+app.post('/create', function(req, res){
+  models.User.findOne({where: {id: this.id}}).then(function(){
+    Application.create({
+        companyName: req.body.companyName,
+        position:req.body.position,
+        dataApplied: req.body.dateApplied,
+        replied:req.body.replied,
+        nextEvent:req.body.nextEvent,
+        notes:req.body.notes,
+        resume:req.body.resume
+  }).then(function(){
+    res.redirect('/home');
+  }).catch(function(err){
+    throw err; 
+  });    
+})
+})
+	
+	// models.Manager.findOne({where: { fullName: name} })
+	// // pass the manager in a callback function
+	// .then(function(manager){
+	// 	// then get that manager's stores using 
+	// 	// using the belongToMany() getAssociations method 
+	// 	return manager.getStores()
+	// 	// use those stores in a callback function
+	// 	.then(function(stores){
+	// 		// and send the stores to the client as json
+	// 		return res.json(stores);
+	// 	})
+	// })
+
