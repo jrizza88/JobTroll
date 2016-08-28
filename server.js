@@ -18,7 +18,7 @@ var models = require('./models');
 var db = models.sequelize;
 
 // this is used to sync the data
-db.sync();
+db.sync({force: true});
 
 
 var User = models.User;
