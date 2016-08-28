@@ -98,7 +98,11 @@ var companies = models.Companies;
 //  ----- Log In  GET Request-------- //
      app.get('/', function (req, res) {
        console.log(req.user, "request Userrrrrrr")
-        res.render('login', {user: req.user});
+        res.render('mainpage', {user: req.user});
+      });
+
+      app.get('/mainpage', function(req, res) {
+        res.render('mainpage');
       });
 
      app.get('/login', function(req, res) {
@@ -208,16 +212,16 @@ app.post('/create', function(req, res){
   }).then(function(){
     res.redirect('/home');
   }).catch(function(err){
-    throw err; 
-  });    
+    throw err;
+  });
 })
 })
-	
+
 	// models.Manager.findOne({where: { fullName: name} })
 	// // pass the manager in a callback function
 	// .then(function(manager){
-	// 	// then get that manager's stores using 
-	// 	// using the belongToMany() getAssociations method 
+	// 	// then get that manager's stores using
+	// 	// using the belongToMany() getAssociations method
 	// 	return manager.getStores()
 	// 	// use those stores in a callback function
 	// 	.then(function(stores){
@@ -225,4 +229,3 @@ app.post('/create', function(req, res){
 	// 		return res.json(stores);
 	// 	})
 	// })
-
