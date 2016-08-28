@@ -1,5 +1,22 @@
 <h1>Homepage {{user}}!</h1>
 
 <div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 text-center enter_section">
+			<form action="/create" method="post">
+				<input type="text" class="form-control" name="companyName" value="" id="enter_text" placeholder="Company Name">
+                <input type="text" class="form-control" name="position" value="" id="enter_text" placeholder="Position applied for">
+                <input type="date" class="form-control" name="dateApplied" value="" id="enter_text" >
+                <input type="text" class="form-control" name="replied" value="" id="enter_text" placeholder="Have they replied back?">
+                <input type="text" class="form-control" name="nextEvent" value="" id="enter_text" placeholder="What is the next event?">
+                <input type="text" class="form-control" name="notes" value="" id="enter_text" placeholder="Enter Notes here">
+                <input type="text" class="form-control" name="resume" value="" id="enter_text" placeholder="Have you submitted your resume?">
+				<button type="submit" class="btn btn-primary" id="text-enter-button" name={{user.id}}>Submit</button>
+			</form>
+			<p></p>
+		</div>
+	</div>
+</div>
 <button type="button" class="btn btn-default"><a href="/logout">Logout</a></button>
 </div>
