@@ -16,16 +16,15 @@ var importData = require('./config/orm.js')['exportData'];
 // var db = require('./models/index.js').sequelize;
 var models = require('./models');
 var db = models.sequelize;
+var enteredApplication;
+var thisUser;
+var data;
 
 // this is used to sync the data
 db.sync();
-
-
 var User = models.User;
 var Application = models.application;
-User.findAll().then(function(u){
-  console.log(u);
-})
+
 var app = express();
 
 var companies = models.Companies;
@@ -33,7 +32,6 @@ var companies = models.Companies;
  // module.exports =
  passport.use('local', new LocalStrategy(
   function(username, password, done) {
-    console.log("I work!")
     User.findOne({where: {username: username} } ).then(function(user){
       if (!user){
         return done(null, false);
@@ -57,7 +55,6 @@ var companies = models.Companies;
      ));
 
      passport.serializeUser(function(user, cb) {
-       console.log("hi there",user.id)
        cb(null, user.id);
      });
 
@@ -97,8 +94,7 @@ var companies = models.Companies;
 
 //  ----- Log In  GET Request-------- //
      app.get('/', function (req, res) {
-       console.log(req.user, "request Userrrrrrr")
-        res.render('mainpage', {user: req.user});
+        res.render('mainpage');
       });
 
       app.get('/mainpage', function(req, res) {
@@ -126,8 +122,17 @@ var companies = models.Companies;
 
   app.get('/home', function (req, res){
       if (req.user) {
-          var user = req.user.username;
-          res.render('home', {user: user});
+          Application.findAll({where: {UserId: req.user.id} }).then(function(success){
+            enteredApplication = success;
+          })
+          data = {
+            user: req.user,
+            enteredApp: enteredApplication
+          }
+          res.render('home', {data: data});
+          Application.findAll({where: {UserId: req.user.id} }).then(function(success){
+            enteredApplication = success;
+          })
     } else {
       		res.redirect('/login');
     }
@@ -159,7 +164,6 @@ var companies = models.Companies;
 
      app.get('/logout', function(req, res){
       //var name = req.user.username;
-      console.log("you logged out successfully!");
       req.logout();
       //console.log(name + "works");
       res.redirect('/');
@@ -168,7 +172,6 @@ var companies = models.Companies;
 
       app.get('/research', function(req,res){
         importData.selectAll(function(success){
-          console.log(success);
         res.render('research',{data: success})
 
         })

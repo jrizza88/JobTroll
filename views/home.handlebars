@@ -17,15 +17,16 @@
     </ul>
 </div>
 </div>
-<h1>Welcome Home {{user}}!</h1>
+<h1>Welcome Home {{data.user.username}}!</h1>
 <div>
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 text-center enter_section">
 			<form action="/create" method="post">
+      {{!-- <form id="appSubmit"> --}}
 				<input type="text" class="form-control" name="companyName" value="" id="enter_text" placeholder="Company Name">
                 <input type="text" class="form-control" name="position" value="" id="enter_text" placeholder="Position applied for">
-                <input type="date" class="form-control" name="dateApplied" value="" id="enter_text" >
+                <input type="text" class="form-control" name="dateApplied" value="" id="enter_text" placeholder="mm/dd/yyyyy" >
                 <input type="text" class="form-control" name="replied" value="" id="enter_text" placeholder="Have they replied back?">
                 <input type="text" class="form-control" name="nextEvent" value="" id="enter_text" placeholder="What is the next event?">
                 <input type="text" class="form-control" name="notes" value="" id="enter_text" placeholder="Enter Notes here">
@@ -36,4 +37,9 @@
 		</div>
 	</div>
 </div>
+</div>
+<div id = "applicationData">
+{{#each data.enteredApp}}
+  <p>{{this.companyName}}</p>
+{{/each}}
 </div>
