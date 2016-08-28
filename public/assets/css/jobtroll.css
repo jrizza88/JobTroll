@@ -16,7 +16,7 @@
     text-align: center;
     background: none;
     -webkit-transition: color .2s ease-out, padding .3s ease-out;
-    transition: color .2s ease-out, padding .3s ease-out; 
+    transition: color .2s ease-out, padding .3s ease-out;
 }
 
 #site-nav .active a,
@@ -41,17 +41,34 @@ table, th, td {
    border: 1px solid black;
 }
 
+#parentheader {
+    background-image: url("../images/theheader40.jpg");
+    background-repeat: repeat-y; /* for vertical repeat */
+    background-repeat: repeat-x; /* for horizontal repeat */
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    color: black;
+}
 
+#childheader {
+color: black;
+}
 
 
 /*Ethans css */
 .navbar-header{
     padding-left:10px;
-    
+
 }
 .logo{
     display:inline-block;
-    
+
 }
 
 .navbar {
@@ -64,7 +81,7 @@ table, th, td {
     padding-bottom: 5px;
 }
 
-#tname{ 
+#tname{
     font-family: 'EB Garamond', serif;
     display:inline-block;
     margin-bottom: 1px;
@@ -76,14 +93,14 @@ table, th, td {
 #logoName {
     background-color: lightgrey;
     padding-right:20px;
-    
+
 }
 
 #navList{
     margin-top: 15px;
     margin-right:5%;
     padding-bottom:0px;
-    
+
 }
 
 #navList a {
@@ -93,7 +110,7 @@ table, th, td {
     font-size: 17px;
     font-family: 'EB Garamond', serif;
     -webkit-transition: color .2s ease-out, padding .3s ease-out;
-    transition: color .2s ease-out, padding .3s ease-out; 
+    transition: color .2s ease-out, padding .3s ease-out;
 }
 #navList a:hover{
     padding-top: 4px;
@@ -101,7 +118,7 @@ table, th, td {
     color:#00CCCB !important;
     background: none;
     font-family: 'EB Garamond', serif;
-    
+
 }
 
 .headText {
