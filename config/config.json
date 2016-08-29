@@ -15,10 +15,10 @@
   },
   "production": {
     "use_env_variable": "DATABASE_URL",
-    "username": "mxr4sw3jewzv5rw5",
-    "password": "njpx6ck71xghi844",
-    "database": "tm4gkhpdfar6y7j6",
-    "host": "d6q8diwwdmy5c9k9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    // "username": "mxr4sw3jewzv5rw5",
+    // "password": "njpx6ck71xghi844",
+    // "database": "tm4gkhpdfar6y7j6",
+    // "host": "d6q8diwwdmy5c9k9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
