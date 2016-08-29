@@ -17,19 +17,11 @@
     </ul>
 </div>
 </div>
-<<<<<<< HEAD
-<h1 id='welcome'>Welcome Home {{data.user.username}}!</h1>
-<div>
-<div class="container">
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3 text-center enter_section" id='appform'>
-=======
 <h1 class="text-center">Welcome Home {{data.user.username}}!</h1>
 <div>
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 text-center enter_section">
->>>>>>> b441e97bc414352a10989eed6fc80ebbcdfa34cc
 			<form action="/create" method="post">
       {{!-- <form id="appSubmit"> --}}
 				<input type="text" class="form-control" name="companyName" value="" id="enter_text" placeholder="Company Name">
@@ -46,28 +38,7 @@
 	</div>
 </div>
 </div>
-<<<<<<< HEAD
 
-    {{#each data.enteredApp}}
-    <div id = "applicationData" class='col-md-6 col-md-offset-3'>
-        <div id='appcontent'>
-            <div class='row'>
-                <p class='col-md-4'>Company Name:{{this.companyName}}</p>
-                <p class='col-md-4'>Position:{{this.position}}</p>
-                <p class='col-md-4'>Date Applied: {{this.dateApplied}} </p>
-            </div>
-            <div class='row'>
-                <p class='col-md-4'>Have they replied:{{this.replied}}</p>
-                <p class='col-md-4'>Next Event:{{this.nectEvent}}</p>
-                <p class='col-md-4'>Submitted Resume:{{this.resume}}</p>
-            </div>
-        <p>Notes:{{this.notes}}</p>
-        </div>
-    </div>
-    {{/each}}
-    
-
-=======
 <div id = "applicationData">
   {{#each data.enteredApp}}
   <div class="row">
@@ -106,4 +77,21 @@
     </div>
   </div>
   {{/each}}
->>>>>>> b441e97bc414352a10989eed6fc80ebbcdfa34cc
+
+    {{#each data.enteredApp}}
+    <div id = "applicationData" class='col-md-6 col-md-offset-3'>
+        <div id='appcontent'>
+            <div class='row'>
+                <p class='col-md-4'>Company Name:{{this.companyName}}</p>
+                <p class='col-md-4'>Position:{{this.position}}</p>
+                <p class='col-md-4'>Date Applied: {{this.dateApplied}} </p>
+            </div>
+            <div class='row'>
+                <p class='col-md-4'>Have they replied:{{this.replied}}</p>
+                <p class='col-md-4'>Next Event:{{this.nectEvent}}</p>
+                <p class='col-md-4'>Submitted Resume:{{this.resume}}</p>
+            </div>
+        <p>Notes:{{this.notes}}</p>
+        </div>
+    </div>
+    {{/each}}
