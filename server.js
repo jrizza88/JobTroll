@@ -140,7 +140,7 @@ var companies = models.Companies;
     }
   });
 
-app.get('/dummmy', function(req, res){
+app.get('/dummy', function(req, res){
   if (req.user) 
   {
           Application.findAll({where: {UserId: req.user.id} }).then(function(success){
