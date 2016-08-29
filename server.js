@@ -22,7 +22,9 @@ var thisUser;
 var data;
 
 // this is used to sync the data
+
 db.sync();
+
 var User = models.User;
 var Application = models.application;
 
