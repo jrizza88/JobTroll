@@ -9,6 +9,7 @@ var session = require('express-session');
 // have to pass on a Store object on to the session
 var SequelizeStore = require('connect-session-sequelize')(session.Store);
 // using local strategy, and setting it up here to give options.
+var mysql = require('mysql');
 
 var LocalStrategy = require('passport-local').Strategy;
 var importData = require('./config/orm.js')['exportData'];
@@ -26,6 +27,18 @@ var User = models.User;
 var Application = models.application;
 
 var app = express();
+
+process.env.JAWSDB_URL = 'mysql://cghoaki3cl5m320j:jbg98va2gj28d9xd@d6q8diwwdmy5c9k9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/ucrzbm5dga6f4ukv'
+
+var connection = mysql.createConnection(process.env.JAWSDB_URL);
+
+connection.connect();
+
+connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
+  if (err) throw err;
+
+  console.log('The solution is: ', rows[0].solution);
+});
 
 var companies = models.Companies;
 
