@@ -30,7 +30,7 @@ var Application = models.application;
 
 var app = express();
 
-process.env.JAWSDB_URL = 'mysql://cghoaki3cl5m320j:jbg98va2gj28d9xd@d6q8diwwdmy5c9k9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/ucrzbm5dga6f4ukv'
+process.env.JAWSDB_URL = 'mysql://ea0dumqaf7j0lxkc:tr87ri8r8xlnrj3m@d6q8diwwdmy5c9k9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/pk48ctyv6e897jy5?sslca=rds-combined-ca-bundle.pem&ssl-verify-server-cert'
 
 var connection = mysql.createConnection(process.env.JAWSDB_URL);
 
