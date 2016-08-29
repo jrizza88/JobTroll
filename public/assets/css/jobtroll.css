@@ -170,5 +170,21 @@ footer {
     border-top:thick double black;
 }
 
+#welcome{
+    text-align: center;
+    /*margin-left:30%;*/
+}
 
+#appform {
+    background-color: lightgray;
+    padding-top:20px;
+}
+
+#applicationData {
+    background-color:lightgray;
+    margin-top: 10px;
+}
+#appcontent{
+    padding:10px;
+}
 /*///////////*/

@@ -17,11 +17,11 @@
     </ul>
 </div>
 </div>
-<h1>Welcome Home {{data.user.username}}!</h1>
+<h1 id='welcome'>Welcome Home {{data.user.username}}!</h1>
 <div>
 <div class="container">
 	<div class="row">
-		<div class="col-md-6 text-center enter_section">
+		<div class="col-md-6 col-md-offset-3 text-center enter_section" id='appform'>
 			<form action="/create" method="post">
       {{!-- <form id="appSubmit"> --}}
 				<input type="text" class="form-control" name="companyName" value="" id="enter_text" placeholder="Company Name">
@@ -38,8 +38,23 @@
 	</div>
 </div>
 </div>
-<div id = "applicationData">
-{{#each data.enteredApp}}
-  <p>{{this.companyName}}</p>
-{{/each}}
-</div>
+
+    {{#each data.enteredApp}}
+    <div id = "applicationData" class='col-md-6 col-md-offset-3'>
+        <div id='appcontent'>
+            <div class='row'>
+                <p class='col-md-4'>Company Name:{{this.companyName}}</p>
+                <p class='col-md-4'>Position:{{this.position}}</p>
+                <p class='col-md-4'>Date Applied: {{this.dateApplied}} </p>
+            </div>
+            <div class='row'>
+                <p class='col-md-4'>Have they replied:{{this.replied}}</p>
+                <p class='col-md-4'>Next Event:{{this.nectEvent}}</p>
+                <p class='col-md-4'>Submitted Resume:{{this.resume}}</p>
+            </div>
+        <p>Notes:{{this.notes}}</p>
+        </div>
+    </div>
+    {{/each}}
+    
+
