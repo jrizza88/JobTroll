@@ -1,222 +1,225 @@
-C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe  Ver 14.14 Distrib 5.7.13, for Win64 (x86_64)
-Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+-- MySQL dump 10.13  Distrib 5.7.13, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: companyresearch_db
+-- ------------------------------------------------------
+-- Server version	5.7.13-log
 
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-Usage: C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe [OPTIONS] [database]
-  -?, --help          Display this help and exit.
-  -I, --help          Synonym for -?
-  --auto-rehash       Enable automatic rehashing. One doesn't need to use
-                      'rehash' to get table and field completion, but startup
-                      and reconnecting may take a longer time. Disable with
-                      --disable-auto-rehash.
-                      (Defaults to on; use --skip-auto-rehash to disable.)
-  -A, --no-auto-rehash 
-                      No automatic rehashing. One has to use 'rehash' to get
-                      table and field completion. This gives a quicker start of
-                      mysql and disables rehashing on reconnect.
-  --auto-vertical-output 
-                      Automatically switch to vertical output mode if the
-                      result is wider than the terminal width.
-  -B, --batch         Don't use history file. Disable interactive behavior.
-                      (Enables --silent.)
-  --bind-address=name IP address to bind to.
-  --character-sets-dir=name 
-                      Directory for character set files.
-  --column-type-info  Display column type information.
-  -c, --comments      Preserve comments. Send comments to the server. The
-                      default is --skip-comments (discard comments), enable
-                      with --comments.
-  -C, --compress      Use compression in server/client protocol.
-  -#, --debug[=#]     This is a non-debug version. Catch this and exit.
-  --debug-check       This is a non-debug version. Catch this and exit.
-  -T, --debug-info    This is a non-debug version. Catch this and exit.
-  -D, --database=name Database to use.
-  --default-character-set=name 
-                      Set the default character set.
-  --delimiter=name    Delimiter to be used.
-  --enable-cleartext-plugin 
-                      Enable/disable the clear text authentication plugin.
-  -e, --execute=name  Execute command and quit. (Disables --force and history
-                      file.)
-  -E, --vertical      Print the output of a query (rows) vertically.
-  -f, --force         Continue even if we get an SQL error.
-  --histignore=name   A colon-separated list of patterns to keep statements
-                      from getting logged into syslog and mysql history.
-  -G, --named-commands 
-                      Enable named commands. Named commands mean this program's
-                      internal commands; see mysql> help . When enabled, the
-                      named commands can be used from any line of the query,
-                      otherwise only from the first line, before an enter.
-                      Disable with --disable-named-commands. This option is
-                      disabled by default.
-  -i, --ignore-spaces Ignore space after function names.
-  --init-command=name SQL Command to execute when connecting to MySQL server.
-                      Will automatically be re-executed when reconnecting.
-  --local-infile      Enable/disable LOAD DATA LOCAL INFILE.
-  -b, --no-beep       Turn off beep on error.
-  -h, --host=name     Connect to host.
-  -H, --html          Produce HTML output.
-  -X, --xml           Produce XML output.
-  --line-numbers      Write line numbers for errors.
-                      (Defaults to on; use --skip-line-numbers to disable.)
-  -L, --skip-line-numbers 
-                      Don't write line number for errors.
-  -n, --unbuffered    Flush buffer after each query.
-  --column-names      Write column names in results.
-                      (Defaults to on; use --skip-column-names to disable.)
-  -N, --skip-column-names 
-                      Don't write column names in results.
-  --sigint-ignore     Ignore SIGINT (CTRL-C).
-  -o, --one-database  Ignore statements except those that occur while the
-                      default database is the one named at the command line.
-  -p, --password[=name] 
-                      Password to use when connecting to server. If password is
-                      not given it's asked from the tty.
-  -W, --pipe          Use named pipes to connect to server.
-  -P, --port=#        Port number to use for connection or 0 for default to, in
-                      order of preference, my.cnf, $MYSQL_TCP_PORT,
-                      /etc/services, built-in default (3306).
-  --prompt=name       Set the mysql prompt to this value.
-  --protocol=name     The protocol to use for connection (tcp, socket, pipe,
-                      memory).
-  -q, --quick         Don't cache result, print it row by row. This may slow
-                      down the server if the output is suspended. Doesn't use
-                      history file.
-  -r, --raw           Write fields without conversion. Used with --batch.
-  --reconnect         Reconnect if the connection is lost. Disable with
-                      --disable-reconnect. This option is enabled by default.
-                      (Defaults to on; use --skip-reconnect to disable.)
-  -s, --silent        Be more silent. Print results with a tab as separator,
-                      each row on new line.
-  --shared-memory-base-name=name 
-                      Base name of shared memory.
-  -S, --socket=name   The socket file to use for connection.
-  --ssl-mode=name     SSL connection mode.
-  --ssl               Deprecated. Use --ssl-mode instead.
-                      (Defaults to on; use --skip-ssl to disable.)
-  --ssl-verify-server-cert 
-                      Deprecated. Use --ssl-mode=VERIFY_IDENTITY instead.
-  --ssl-ca=name       CA file in PEM format.
-  --ssl-capath=name   CA directory.
-  --ssl-cert=name     X509 cert in PEM format.
-  --ssl-cipher=name   SSL cipher to use.
-  --ssl-key=name      X509 key in PEM format.
-  --ssl-crl=name      Certificate revocation list.
-  --ssl-crlpath=name  Certificate revocation list path.
-  --tls-version=name  TLS version to use, permitted values are: TLSv1, TLSv1.1
-  -t, --table         Output in table format.
-  --tee=name          Append everything into outfile. See interactive help (\h)
-                      also. Does not work in batch mode. Disable with
-                      --disable-tee. This option is disabled by default.
-  -u, --user=name     User for login if not current user.
-  -U, --safe-updates  Only allow UPDATE and DELETE that uses keys.
-  -U, --i-am-a-dummy  Synonym for option --safe-updates, -U.
-  -v, --verbose       Write more. (-v -v -v gives the table output format).
-  -V, --version       Output version information and exit.
-  -w, --wait          Wait and retry if connection is down.
-  --connect-timeout=# Number of seconds before connection timeout.
-  --max-allowed-packet=# 
-                      The maximum packet length to send to or receive from
-                      server.
-  --net-buffer-length=# 
-                      The buffer size for TCP/IP and socket communication.
-  --select-limit=#    Automatic limit for SELECT when using --safe-updates.
-  --max-join-size=#   Automatic limit for rows in a join when using
-                      --safe-updates.
-  --secure-auth       Refuse client connecting to server if it uses old
-                      (pre-4.1.1) protocol. Deprecated. Always TRUE
-  --server-arg=name   Send embedded server this as a parameter.
-  --show-warnings     Show warnings after every statement.
-  -j, --syslog        Log filtered interactive commands to syslog. Filtering of
-                      commands depends on the patterns supplied via histignore
-                      option besides the default patterns.
-  --plugin-dir=name   Directory for client-side plugins.
-  --default-auth=name Default authentication client-side plugin to use.
-  --binary-mode       By default, ASCII '\0' is disallowed and '\r\n' is
-                      translated to '\n'. This switch turns off both features,
-                      and also turns off parsing of all clientcommands except
-                      \C and DELIMITER, in non-interactive mode (for input
-                      piped to mysql or loaded using the 'source' command).
-                      This is necessary when processing output from mysqlbinlog
-                      that may contain blobs.
-  --connect-expired-password 
-                      Notify the server that this client is prepared to handle
-                      expired password sandbox mode.
+--
+-- Table structure for table `applications`
+--
 
-Default options are read from the following files in the given order:
-C:\WINDOWS\my.ini C:\WINDOWS\my.cnf C:\my.ini C:\my.cnf C:\Program Files\MySQL\MySQL Server 5.7\my.ini C:\Program Files\MySQL\MySQL Server 5.7\my.cnf 
-The following groups are read: mysql client
-The following options may be given as the first argument:
---print-defaults        Print the program argument list and exit.
---no-defaults           Don't read default options from any option file,
-                        except for login file.
---defaults-file=#       Only read default options from the given file #.
---defaults-extra-file=# Read this file after the global files are read.
---defaults-group-suffix=#
-                        Also read groups with concat(group, suffix)
---login-path=#          Read this path from the login file.
+DROP TABLE IF EXISTS `applications`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `applications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `companyName` varchar(255) DEFAULT NULL,
+  `position` varchar(255) DEFAULT NULL,
+  `dateApplied` datetime DEFAULT NULL,
+  `replied` varchar(255) DEFAULT NULL,
+  `nextEvent` varchar(255) DEFAULT NULL,
+  `notes` text,
+  `resume` varchar(255) DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  `UserId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `UserId` (`UserId`),
+  CONSTRAINT `applications_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-Variables (--variable-name=value)
-and boolean options {FALSE|TRUE}  Value (after reading options)
---------------------------------- ----------------------------------------
-auto-rehash                       TRUE
-auto-vertical-output              FALSE
-bind-address                      (No default value)
-character-sets-dir                (No default value)
-column-type-info                  FALSE
-comments                          FALSE
-compress                          FALSE
-database                          (No default value)
-default-character-set             auto
-delimiter                         ;
-enable-cleartext-plugin           FALSE
-vertical                          FALSE
-force                             FALSE
-histignore                        (No default value)
-named-commands                    FALSE
-ignore-spaces                     FALSE
-init-command                      (No default value)
-local-infile                      FALSE
-no-beep                           FALSE
-host                              127.0.0.1
-html                              FALSE
-xml                               FALSE
-line-numbers                      TRUE
-unbuffered                        FALSE
-column-names                      TRUE
-sigint-ignore                     FALSE
-port                              0
-prompt                            mysql> 
-quick                             FALSE
-raw                               FALSE
-reconnect                         FALSE
-shared-memory-base-name           (No default value)
-socket                            (No default value)
-ssl                               TRUE
-ssl-verify-server-cert            FALSE
-ssl-ca                            (No default value)
-ssl-capath                        (No default value)
-ssl-cert                          (No default value)
-ssl-cipher                        (No default value)
-ssl-key                           (No default value)
-ssl-crl                           (No default value)
-ssl-crlpath                       (No default value)
-tls-version                       (No default value)
-table                             FALSE
-user                              root
-safe-updates                      FALSE
-i-am-a-dummy                      FALSE
-connect-timeout                   0
-max-allowed-packet                16777216
-net-buffer-length                 16384
-select-limit                      1000
-max-join-size                     1000000
-secure-auth                       TRUE
-show-warnings                     FALSE
-plugin-dir                        (No default value)
-default-auth                      (No default value)
-binary-mode                       FALSE
-connect-expired-password          FALSE
+--
+-- Dumping data for table `applications`
+--
+
+LOCK TABLES `applications` WRITE;
+/*!40000 ALTER TABLE `applications` DISABLE KEYS */;
+INSERT INTO `applications` VALUES (1,'Google','CEO',NULL,'Yes','Now','I got the job','Yes','2016-08-29 13:30:34','2016-08-29 13:30:34',1),(2,'Google','CEO',NULL,'Yes, i got the job','Now','Got the CEO job','Yes','2016-08-29 13:33:37','2016-08-29 13:33:38',1),(3,'Google','CEO',NULL,'Yes, i got the job','Now','Got the CEO job','Yes','2016-08-29 13:35:42','2016-08-29 13:35:42',1),(4,'Google','CEO',NULL,'Yes, i got the job','Now','Got the CEO job','Yes','2016-08-29 13:36:49','2016-08-29 13:36:49',1);
+/*!40000 ALTER TABLE `applications` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `companies`
+--
+
+DROP TABLE IF EXISTS `companies`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `companies` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company` varchar(255) DEFAULT NULL,
+  `description` text,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `companies`
+--
+
+LOCK TABLES `companies` WRITE;
+/*!40000 ALTER TABLE `companies` DISABLE KEYS */;
+INSERT INTO `companies` VALUES (1,'Beme','A video messaging app created by a popular vlogger and short film maker on Youtube.','2016-08-23 01:50:16','2016-08-23 01:50:16'),(2,'Betterment','The smarter automated investing service that provides optimized investment returns for individual, IRA, ROTH IRA & Rollover 401(k) accounts.','2016-08-23 01:51:33','2016-08-23 01:51:33'),(3,'BigDrop','One of New Yorks most coveted contemporary womenswear retailer housing independent designers and favored labels.','2016-08-23 01:53:42','2016-08-23 01:53:42'),(4,'EMC','Clouding computing and big data products and solutions that enable other businesses to store, manage, protect and analyze their data securely.','2016-08-23 01:54:36','2016-08-23 01:54:36'),(5,'Texas Instruments','A global semiconductor design & manufacturing company. They innovate with 80000+ analog ICs & embedded processors, software & largest sales/support staff.','2016-08-23 01:56:00','2016-08-23 01:56:00'),(6,'Salesforce','Provide on-demand customer relationship management (CRM) software services to help companies with global customer communication.','2016-08-23 01:57:02','2016-08-23 01:57:02'),(7,'AMD','American multinational semiconductor company based in Sunnyvale, California that develops computer processors and related technologies for business and consumer markets.','2016-08-23 01:58:15','2016-08-23 01:58:15'),(8,'NetApp','Deliver software, systems and services to manage and store your data. Provide enhanced data control, choice, and efficiency.','2016-08-23 01:59:04','2016-08-23 01:59:04'),(9,'MindBody','World leader in software for class and appointment based businesses.','2016-08-23 01:59:56','2016-08-23 01:59:56'),(10,'World Wide Technology','Award winning technology integrator bringing collaborative, innovative, and proven approaches to evaluate, architect and implement solutions.','2016-08-23 02:00:59','2016-08-23 02:00:59'),(11,'Zillow','The leading real estate marketplace. Search millions for sale and rental listings, compare home values and connect with local professionals.','2016-08-23 02:01:54','2016-08-23 02:01:54'),(12,'Hubspot','An inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers.','2016-08-23 02:02:41','2016-08-23 02:02:41'),(13,'Crowdtwist','An industry-leading provider of comprehensive multichannel loyalty and engagement solutions.','2016-08-23 02:03:46','2016-08-23 02:03:46'),(14,'AirBnb','An online marketplace that enables people to list, find, then rent vacation homes for a processing fee. Over 1,500,000 listings in 34,000 cities and 191 countries.','2016-08-23 02:04:59','2016-08-23 02:04:59'),(15,'REI','Retail chain carrying gear, apparel & footwear for a wide range of outdoor & fitness activities.','2016-08-23 02:05:44','2016-08-23 02:05:44'),(16,'World Wildlife Fund','The leading organization in wildlife conservation and endangered species.','2016-08-23 02:06:36','2016-08-23 02:06:36'),(17,'PwC','Focus on audit and assurance, tax and consulting services. They help resolve complex issues and identify opportunities.','2016-08-23 02:07:34','2016-08-23 02:07:34'),(18,'Burton','Manufacturer of Snowboards and various other snow sport equipment.','2016-08-23 02:08:16','2016-08-23 02:08:16'),(19,'Twilio','Cloud communications platform for building voice & messaging applications on an API built for global scale.','2016-08-23 02:08:58','2016-08-23 02:08:58'),(20,'Accenture','A leading global professional services company, providing a broad range of services and solutions in strategy, consulting, digital, and technology.','2016-08-23 02:09:56','2016-08-23 02:09:56'),(21,'Evernote','Collect, nurture, and share ideas across desktop and mobile platforms.','2016-08-23 02:10:30','2016-08-23 02:10:30'),(22,'Asana','A web and mobile application designed to help teams track their work.','2016-08-23 02:11:06','2016-08-23 02:11:06'),(23,'Buzzfeed','An internet media comapny that describes itself as a social news and entertainment company with a focus on digital media and technology.','2016-08-23 02:12:03','2016-08-23 02:12:03'),(24,'Cognizant IT Technology','A leader in global business & technology services.','2016-08-23 02:12:42','2016-08-23 02:12:42'),(25,'Epic Systems Corporation','A privately held healthcare software company.','2016-08-23 02:13:27','2016-08-23 02:13:27');
+/*!40000 ALTER TABLE `companies` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `jobwebsites`
+--
+
+DROP TABLE IF EXISTS `jobwebsites`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `jobwebsites` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `website` varchar(255) DEFAULT NULL,
+  `description` text,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `jobwebsites`
+--
+
+LOCK TABLES `jobwebsites` WRITE;
+/*!40000 ALTER TABLE `jobwebsites` DISABLE KEYS */;
+INSERT INTO `jobwebsites` VALUES (1,'http://www.themuse.com/jobs','Free career advice on topics such as interview tips, resume & cover letter samples, and search for jobs from the best companies.','2016-08-23 01:38:38','2016-08-23 01:38:38'),(2,'https://jobs.github.com','Not only for source-code storage and browsing, but a website for job postings as well.','2016-08-23 01:40:34','2016-08-23 01:40:34'),(3,'https://authenticjobs.com','The leading job board for designers, hackers, and creative pros.','2016-08-23 01:41:15','2016-08-23 01:41:15'),(4,'https://jobbatical.com/explore','Connecting top talent to employers for short term gigs.','2016-08-23 01:42:17','2016-08-23 01:42:17'),(5,'https://stackoverflow.com/jobs','Most popular coding forum, and also popular for job posting and job searching.','2016-08-23 01:43:07','2016-08-23 01:43:07'),(6,'https://angel.co/jobs','1000s of startup jobs at the best startups.','2016-08-23 01:44:10','2016-08-23 01:44:10');
+/*!40000 ALTER TABLE `jobwebsites` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `recruiters`
+--
+
+DROP TABLE IF EXISTS `recruiters`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `recruiters` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company` varchar(255) DEFAULT NULL,
+  `description` text,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `recruiters`
+--
+
+LOCK TABLES `recruiters` WRITE;
+/*!40000 ALTER TABLE `recruiters` DISABLE KEYS */;
+INSERT INTO `recruiters` VALUES (1,'Cybercoders','A leading permanent placement recruiting firm','2016-08-23 01:08:54','2016-08-23 01:08:54'),(2,'Robert Half','American Human Resource consulting firm. Member of the S&P 500, credited as being the worlds first largest account and finance staffing firm.','2016-08-23 01:11:03','2016-08-23 01:11:03'),(3,'Dice','Career website that serves information technology and engineering professionals. Owned by DHI Group, Inc. Typically has 80000 job listings.','2016-08-23 01:12:47','2016-08-23 01:12:47'),(4,'Lucas Group','One of the premier recruting firms in North America. With 15 locations nationwide, strategic partnerships with recruiting firms in Canada and Europe, and deep experience in a wide range of industries, they have earned a reputation for unparalleled customer service and bottom line results.','2016-08-23 01:14:36','2016-08-23 01:14:36'),(5,'Scientific Research','Full service employment agency known for our expertise in Information Technology, Engineering & Manufacturing, Pharmaceutical, Biotechnology, Clinical Research, Genomics & Medical Device, Market Research and the Food & Beverage industries. Provide clients and candidates with multiple options, including: Direct Hire, Temporary Placements and Temporary-to-Direct Placements.','2016-08-23 01:18:27','2016-08-23 01:18:27'),(6,'Aerotek','Serve virtually every major industry, and have placed exceptional people in thousands of positions. Everything they do is grounded in their guiding principles to build and nurture quality relationships that allow them to place quality people in quality jobs.','2016-08-23 01:21:14','2016-08-23 01:21:14'),(7,'Columbia Technologies','IT recruiting and staffing firm serving premier financial institutions, Fortune 100 corporations and technology companies.','2016-08-23 01:22:57','2016-08-23 01:22:57'),(8,'iCIMS','The leading provider of Applicant Tracking Systems and Recruiting Software.','2016-08-23 01:23:41','2016-08-23 01:23:41'),(9,'Aclion','One of the oldest Executive Recruiters/Headhunters in NYC, with recruiters in all industries.','2016-08-23 01:24:38','2016-08-23 01:24:38');
+/*!40000 ALTER TABLE `recruiters` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sequelizemeta`
+--
+
+DROP TABLE IF EXISTS `sequelizemeta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sequelizemeta` (
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`name`),
+  UNIQUE KEY `name` (`name`),
+  UNIQUE KEY `SequelizeMeta_name_unique` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sequelizemeta`
+--
+
+LOCK TABLES `sequelizemeta` WRITE;
+/*!40000 ALTER TABLE `sequelizemeta` DISABLE KEYS */;
+INSERT INTO `sequelizemeta` VALUES ('20160822234844-create-recruiters.js'),('20160823013116-create-job-websites.js'),('20160823014646-create-companies.js'),('20160823233707-create-application.js');
+/*!40000 ALTER TABLE `sequelizemeta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sessions`
+--
+
+DROP TABLE IF EXISTS `sessions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sessions` (
+  `sid` varchar(32) NOT NULL,
+  `expires` datetime DEFAULT NULL,
+  `data` text,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sessions`
+--
+
+LOCK TABLES `sessions` WRITE;
+/*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
+INSERT INTO `sessions` VALUES ('inXelsEWynVbxgwK9evaLD3OWi15ll0A','2016-08-30 17:13:22','{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"passport\":{}}','2016-08-29 13:29:39','2016-08-29 17:13:22');
+/*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `firstName` varchar(255) DEFAULT NULL,
+  `lastName` varchar(255) DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'jjthom87','ntho1mas','jjthom87@yahoo.com','Jared','Thomas','2016-08-29 13:30:08','2016-08-29 13:30:08');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-08-29 14:07:19
