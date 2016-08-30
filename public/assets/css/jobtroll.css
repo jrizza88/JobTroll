@@ -242,5 +242,21 @@ footer {
   border-top:thick double black;
 }
 
+#appform {
+    background-color: lightgray;
+    padding-top:20px;
+}
 
+#applicationData {
+    background-color:lightgray;
+    margin-top: 10px;
+    padding: 10px;
+}
+#appcontent{
+    padding:10px;
+}
+
+.appTextBox {
+    background-color: #F5F5F5;
+}
 /*///////////*/
