@@ -17,7 +17,7 @@
     </ul>
 </div>
 </div>
-<h1 class="text-center">Welcome Home {{data.user.username}}!</h1>
+<h1 class="text-center">Welcome Home {{data.user.firstName}}!</h1>
 <div>
 <div class="container">
 	<div class="row">
@@ -29,8 +29,9 @@
                 <input type="text" class="form-control" name="dateApplied" value="" id="enter_text" placeholder="mm/dd/yyyyy" >
                 <input type="text" class="form-control" name="replied" value="" id="enter_text" placeholder="Have they replied back?">
                 <input type="text" class="form-control" name="nextEvent" value="" id="enter_text" placeholder="What is the next event?">
-                <input type="text" class="form-control" name="notes" value="" id="enter_text" placeholder="Enter Notes here">
                 <input type="text" class="form-control" name="resume" value="" id="enter_text" placeholder="Have you submitted your resume?">
+                <input type="text" class="form-control" name="notes" value="" id="enter_text" placeholder="Enter Notes here">
+                
 				<button type="submit" class="btn btn-primary" id="text-enter-button" name={{user.id}}>Submit</button>
 			</form>
 			<p></p>
@@ -84,7 +85,7 @@
             <div class='row'>
                 <p class='col-md-4'><b>Company:</b>{{this.companyName}}</p>
                 <p class='col-md-4'><b>Position:</b>{{this.position}}</p>
-                <p class='col-md-4'><b>Date Applied:</b>{{this.dateApplied}} </p>
+                <p class='col-md-4' id="datebox"><b>Date Applied:</b>{{this.createdAt}} </p>
             </div>
             <div class='row'>
                 <p class='col-md-4'><b>Have they replied:</b>{{this.replied}}</p>
