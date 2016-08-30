@@ -36,6 +36,7 @@ var connection = mysql.createConnection(process.env.JAWSDB_URL);
 
 connection.connect();
 
+
 connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
   if (err) throw err;
 
@@ -157,7 +158,7 @@ var companies = models.Companies;
   });
 
 app.get('/dummy', function(req, res){
-  if (req.user) 
+  if (req.user)
   {
           Application.findAll({where: {UserId: req.user.id} }).then(function(success){
             enteredApplication = success;
