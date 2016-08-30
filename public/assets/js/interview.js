@@ -203,7 +203,7 @@ $(document).ready(function(){
 			newP.append(index);
 			newDiv.append(newP);
 
-			var newInput = $('<input>').width(400);
+			var newInput = $('<textarea>').width(400).height(200);
 			newDiv.append(newInput);
 
 			return newDiv;
