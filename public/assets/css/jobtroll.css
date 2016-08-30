@@ -235,5 +235,12 @@ footer {
     border-top:thick double black;
 }
 
+.footer2{
+  position: fixed;
+  padding:20px;
+  background-color:lightgray;
+  border-top:thick double black;
+}
+
 
 /*///////////*/
