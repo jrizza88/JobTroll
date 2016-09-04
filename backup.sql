@@ -179,7 +179,7 @@ CREATE TABLE `sessions` (
 
 LOCK TABLES `sessions` WRITE;
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
-INSERT INTO `sessions` VALUES ('inXelsEWynVbxgwK9evaLD3OWi15ll0A','2016-08-30 17:13:22','{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"passport\":{}}','2016-08-29 13:29:39','2016-08-29 17:13:22');
+INSERT INTO `sessions` VALUES ('inXelsEWynVbxgwK9evaLD3OWi15ll0A','2016-08-31 21:45:23','{\"cookie\":{\"originalMaxAge\":null,\"expires\":null,\"httpOnly\":true,\"path\":\"/\"},\"passport\":{\"user\":1}}','2016-08-29 13:29:39','2016-08-30 21:45:23');
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -222,4 +222,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-29 14:07:19
+-- Dump completed on 2016-09-03 23:44:51
