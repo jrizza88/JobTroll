@@ -16,14 +16,14 @@
       <div class="alert alert-danger">{{msg}}</div>
     {{/each}}
 {{/if}}
-<form method="post" action="/register">
-<div class= "loginBody">
-  <div class="wrapper">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-6 col-md-offset-3 enter_section">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 enter_section">
+    <form method="post" action="/register">
+      <div class= "loginBody">
+        <div class="wrapper">
+          <div class="container">
             <div class="sectionerReg">
-                  <h2 class = "text-center"><u>Register</u></h2>
+                <h2 class = "text-center"><u>Register</u></h2>
                 <div class="form-group">
                   <label>First Name</label>
                   <input type="text" class="form-control" placeholder="First Name" name="firstName">
@@ -53,18 +53,17 @@
                 <div class="form-group">
                   <label>Confirm Password</label>
                   <input type="password" class="form-control" placeholder="Confirm Your Password" name="password2">
-                </div></br>
+                </div>
                   <button type="submit" class="btn btn-primary" value="register">Submit</button>
-
-                   <button type="button" class="btn btn-default"><a href="/login">Already a member?</a></button>
-                </br></br></br>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </form>
+      <br>
+      <button type="button" class="btn btn-default"><a href="/login">Already a member?</a></button>
     </div>
-</div>
- </form>
-</div>
-</div>
+ </div>
 
 
 <footer class = "text-center">
