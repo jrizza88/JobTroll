@@ -57,7 +57,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `companies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `companies` (
+CREATE TABLE `Companies` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `company` varchar(255) DEFAULT NULL,
   `description` text,
@@ -84,7 +84,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `jobwebsites`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `jobwebsites` (
+CREATE TABLE `JobWebsites` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `website` varchar(255) DEFAULT NULL,
   `description` text,
@@ -111,7 +111,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `recruiters`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `recruiters` (
+CREATE TABLE `Recruiters` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `company` varchar(255) DEFAULT NULL,
   `description` text,
@@ -190,7 +190,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
+CREATE TABLE `Users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
