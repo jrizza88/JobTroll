@@ -1,20 +1,20 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var application = sequelize.define('application', {
+  var Application = sequelize.define('Application', {
     companyName: DataTypes.STRING,
     position: DataTypes.STRING,
-    dateApplied: DataTypes.DATE,
+    dateApplied: DataTypes.STRING,
     replied: DataTypes.STRING,
     nextEvent: DataTypes.STRING,
-    notes: DataTypes.TEXT,
+    notes: DataTypes.STRING,
     resume: DataTypes.STRING
+ //   image: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
-        application.belongsTo(models.User)
-      }
+        Application.belongsTo(models.User);
+        }
     }
   });
-  return application;
+  return Application;
 };
