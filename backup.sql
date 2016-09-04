@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.13, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: companyresearch_db
+-- Host: 127.0.0.1    Database: companyresearch2_db
 -- ------------------------------------------------------
 -- Server version	5.7.13-log
 
@@ -128,31 +128,6 @@ LOCK TABLES `recruiters` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `sequelizemeta`
---
-
-DROP TABLE IF EXISTS `sequelizemeta`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `sequelizemeta` (
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`name`),
-  UNIQUE KEY `name` (`name`),
-  UNIQUE KEY `SequelizeMeta_name_unique` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sequelizemeta`
---
-
-LOCK TABLES `sequelizemeta` WRITE;
-/*!40000 ALTER TABLE `sequelizemeta` DISABLE KEYS */;
-INSERT INTO `sequelizemeta` VALUES ('20160822234844-create-recruiters.js'),('20160823013116-create-job-websites.js'),('20160823014646-create-companies.js'),('20160823233707-create-application.js');
-/*!40000 ALTER TABLE `sequelizemeta` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `sessions`
 --
 
@@ -216,4 +191,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-04  2:14:41
+-- Dump completed on 2016-09-04  2:43:26
