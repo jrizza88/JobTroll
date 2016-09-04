@@ -259,4 +259,9 @@ footer {
 .appTextBox {
     background-color: #F5F5F5;
 }
+
+#datebox{
+width:218px;
+overflow: hidden;
+white-space: nowrap;
 /*///////////*/
