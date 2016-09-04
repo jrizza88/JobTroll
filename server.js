@@ -28,7 +28,7 @@ db.sync();
 var User = models.User;
 var Application = models.application;
 
-// var app = express();
+var app = express();
 
 // process.env.JAWSDB_URL = 'mysql://mxr4sw3jewzv5rw5:njpx6ck71xghi844@d6q8diwwdmy5c9k9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/tm4gkhpdfar6y7j6';
 
