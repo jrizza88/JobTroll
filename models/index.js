@@ -9,11 +9,14 @@ var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
 
 if (config.use_env_variable) {
-  console.log("config is " + config.use_env_variable);
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+  var sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   console.log("using defaults");
-  var sequelize = new Sequelize(config.database, config.username, config.password, config);
+  var sequelize = new Sequelize('companyresearch_db', 'root', null, {
+    host: 'localhost',
+    dialect: 'mysql',
+    port: 3306
+  })
 }
 
 fs
