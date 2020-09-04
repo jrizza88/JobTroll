@@ -33,7 +33,7 @@
     "npm-scripts": "^1.4.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "sequelize": "^3.24.1",
+    "sequelize": "^6.3.5",
     "vue": "^1.0.26"
   }
 }
